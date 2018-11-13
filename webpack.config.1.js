@@ -5,8 +5,6 @@ function resolve(src) {
 }
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
   entry: {
     main: resolve('./src/index.js')
   },
@@ -15,6 +13,8 @@ module.exports = {
     publicPath: '/',
     path: resolve('build'),
   },
+  mode: 'development',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -30,7 +30,6 @@ module.exports = {
       }
     ]
   },
-  
   // plugins: [],
   // resolve: {},
   // server: {}
