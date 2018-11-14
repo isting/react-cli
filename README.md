@@ -18,9 +18,12 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
 
 
 
-  <!-- optimization  -->
+  <!-- babel7 -->
+  <!-- 目录 demo 整理 -->
+  <!-- 整理常用插件 loader -->
   <!-- 优化 -->
+  <!-- optimization  -->
   <!-- hui、react -->
-
+  <!-- 写一个loader -->
   <hr />
   
