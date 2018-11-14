@@ -6,7 +6,7 @@ const webpack = require("webpack");
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, './build'),
+    contentBase: path.join(__dirname, '../build'),
     port: '6060',
     inline: true,
     historyApiFallback: true,

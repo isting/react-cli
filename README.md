@@ -30,6 +30,7 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
   <!-- eslint -->
 <!-- 跨域反向代理 -->
 <!-- ico -->
+<!-- node启动；了解下 -->
   <hr />
 
   <!-- github汲取经验 -->
@@ -37,3 +38,10 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
   <!-- https://webpack.wuhaolin.cn/2%E9%85%8D%E7%BD%AE/2-7%E5%85%B6%E5%AE%83%E9%85%8D%E7%BD%AE%E9%A1%B9.html -->
 
   <!-- https://juejin.im/post/5be64a7bf265da615304493e#heading-2 -->
+  <!-- https://juejin.im/post/5b56909a518825195f499806 -->
+  <!-- https://juejin.im/post/5b5d6d6f6fb9a04fea58aabc -->
+
+  <!-- react@16.7.0-alpha.2 -->
+  <!-- react-dom@16.7.0-alpha.2 -->
+
+  <!-- react新版本 -->

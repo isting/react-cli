@@ -8,11 +8,11 @@ function resolve(strPath) {
 }
 
 module.exports = {
-  entry: resolve("/src/index.js"),
+  entry: resolve("../src/index.js"),
   output: {
-    publicPath: './',
+    publicPath: '',
     filename: '[hash:8].main.js',
-    path: resolve('./build')
+    path: resolve('../build')
   },
   module: {
     rules: [
@@ -51,7 +51,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve("./index.html"),
+      template: resolve("../index.html"),
       filename: 'index.html'
     }),
     new webpack.BannerPlugin('版权所有，翻版必究'),
