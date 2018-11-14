@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/component.js"],"names":["forEach","console","log","el"],"mappings":";;AAAA,CAAC,CAAD,EAAG,CAAH,EAAK,CAAL,EAAO,CAAP,EAAS,CAAT,EAAW,CAAX,EAAcA,OAAd,CAAsB,cAAM;AAC1BC,UAAQC,GAAR,CAAYC,EAAZ;AACD,CAFD","file":"component.js","sourcesContent":["[1,2,3,4,5,6].forEach(el => {\r\n  console.log(el)\r\n})"]}
