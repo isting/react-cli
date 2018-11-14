@@ -15,3 +15,12 @@
 Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全局对象) 在根目录引入即可
   - babel-plugin-transform-runtime 和 babel-polyfill 效果一致
   > 直接用babel-polyfill会有一些坑，第一个坑是污染全局环境，比如说低版本浏览器没有Set，但是babel-polyfill会在全局变量里加一个Set。再一个问题是，会造成代码冗余，举个例子，多个模块用到Promise，每个模块里都有可能独立存在一个对Promise做兼容性的代码。所以，使用babel-polyfill可以解决兼容性问题，但并不是最佳方案
+
+
+
+  <!-- optimization  -->
+  <!-- 优化 -->
+  <!-- hui、react -->
+
+  <hr />
+  
