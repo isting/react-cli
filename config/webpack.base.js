@@ -1,97 +1,65 @@
-/* const webpack = require('webpack');
-const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-function resolve(path) {
-  return path.join(__dirname, path);
-}
-module.exports = {
-  entry: {
-    main: "../src/index.js"
-  },
-  output: {
-    filename: '[hash:8].[name].js',
-    publicPath: '/',
-    path: resolve('../build')
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$}/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [ "env", "react" ]
-          }
-        },
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        loader: ["style-loader", "css-loader"]
-      },
-      {
-        test: /\.less$/,
-        loader: ["style-loader", "css-loader", "less-loader"]
-      },
-    ]
-  },
-  plugins: [
-    new webpack.BannerPlugin('版权所有，翻版必究')
-  ]
-  // resolve: {},
-  // devServer: {}
-} */
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 function resolve(strPath) {
   return path.join(__dirname, strPath)
 }
 
 module.exports = {
-  entry: resolve("../src/index.js"),
+  entry: resolve("/src/index.js"),
   output: {
-    publicPath: '/',
+    publicPath: './',
     filename: '[hash:8].main.js',
-    path: '../build'
+    path: resolve('./build')
   },
   module: {
-    relus: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [ "env", "react" ]
+            presets: [ "env", "react" ],
+            plugins: ['transform-runtime']
           }
         },
         exclude: /node_modules/,
       },
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   use: {
-      //     loader: 'eslint-loader',
-      //     options: {}
-      //   }
-      // },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ["css-loader", "postcss-loader"]
+          // use: ["css-loader", {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     pligins: [require('autoprefixer')]
+          //   }
+          // }]
+        })
       },
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ["css-loader", "postcss-loader", "less-loader"]
+        })
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve("../index"),
+      template: resolve("./index.html"),
       filename: 'index.html'
     }),
-    new webpack.BannerPlugin("")
-  ]
+    new webpack.BannerPlugin('版权所有，翻版必究'),
+    new ExtractTextPlugin('css/css.css')
+  ],
+  resolve: {
+    alias: {
+      "@": "src"
+    }
+  }
 }

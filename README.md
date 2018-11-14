@@ -20,10 +20,20 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
 
   <!-- babel7 -->
   <!-- 目录 demo 整理 -->
-  <!-- 整理常用插件 loader -->
+  <!-- 整理常用插件 loader plugin-->
   <!-- 优化 -->
+  <!-- ts loader -->
   <!-- optimization  -->
   <!-- hui、react -->
   <!-- 写一个loader -->
+  <!-- ssr -->
+  <!-- eslint -->
+<!-- 跨域反向代理 -->
+<!-- ico -->
   <hr />
-  
+
+  <!-- github汲取经验 -->
+  <!-- https://juejin.im/post/5bd66efcf265da0a8a6af2d2#heading-29 -->
+  <!-- https://webpack.wuhaolin.cn/2%E9%85%8D%E7%BD%AE/2-7%E5%85%B6%E5%AE%83%E9%85%8D%E7%BD%AE%E9%A1%B9.html -->
+
+  <!-- https://juejin.im/post/5be64a7bf265da615304493e#heading-2 -->
