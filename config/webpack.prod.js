@@ -14,10 +14,10 @@ module.exports = merge(common, {
     // new PurifyCss({ // 那所有css都清空了
     //   paths: glob.sync(path.join(__dirname, '../src/*.html'))
     // }),
-    new CleanWebpackPlugin('../dist', {
-      // root: __dirname,
-      // verbose: true,
-      // dry: false
+    new CleanWebpackPlugin('dist', { // {文件名即可 root路径}
+      root: path.join(__dirname, "../"),
+      verbose: true,
+      dry: false
     }),
   ]
 })

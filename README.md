@@ -34,13 +34,21 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
   <hr />
 
   <!-- github汲取经验 -->
+
   <!-- https://juejin.im/post/5bd66efcf265da0a8a6af2d2#heading-29 -->
+
+<!-- 深入浅出webpack3.0 -->
   <!-- https://webpack.wuhaolin.cn/2%E9%85%8D%E7%BD%AE/2-7%E5%85%B6%E5%AE%83%E9%85%8D%E7%BD%AE%E9%A1%B9.html -->
 
   <!-- https://juejin.im/post/5be64a7bf265da615304493e#heading-2 -->
   <!-- https://juejin.im/post/5b56909a518825195f499806 -->
   <!-- https://juejin.im/post/5b5d6d6f6fb9a04fea58aabc -->
 <!-- https://github.com/PanJiaChen/vue-element-admin/blob/master/build/webpack.prod.conf.js -->
+
+<!-- 踩坑 webpack -->
+<!-- http://mobilesite.github.io/2017/02/18/all-the-errors-encountered-in-webpack/ -->
+<!-- 珠峰 -->
+<!-- http://mobilesite.github.io/2017/02/18/all-the-errors-encountered-in-webpack/ --> 
 
   <!-- react@16.7.0-alpha.2 -->
   <!-- react-dom@16.7.0-alpha.2 -->
@@ -49,3 +57,6 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
 
   <!-- 发现问题 -->
   <!-- css不会热更新 -->
+
+<!-- 正妹推荐教程 v8 -->
+  <!-- https://juejin.im/post/5beea5f5f265da61590b40cd -->

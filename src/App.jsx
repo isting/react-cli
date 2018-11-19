@@ -9,7 +9,6 @@ import './css/style.css';
         <div className="title">
           hello world!
         </div>
-        <div className="haha">111</div>
       </div>
     )
   }
