@@ -15,7 +15,11 @@ module.exports = merge(common, {
     historyApiFallback: true,
     hot: true,
     open: true,
-    compress: true
+    compress: true,
+    proxy: {
+      // 'https://sixting.com/login'
+      '/': 'https://sixting.com/'  //  请求/login即可
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

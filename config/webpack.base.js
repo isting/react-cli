@@ -18,22 +18,6 @@ module.exports = {
     filename: '[hash:8].main.js',
     path: resolve('../dist')
   },
-  optimization: { // 提取公共代码
-    splitChunks: {
-        cacheGroups: {
-            commons: {
-              chunks: "initial",
-              minChunks: 2,//最小重复的次数
-              minSize: 0//最小提取字节数
-            },
-            vendor: {
-              test: /node_modules/,
-              chunks: "initial",
-              name: "vendor",
-            }
-        }
-    }
-  },
   module: {
     rules: [
       {
@@ -46,6 +30,17 @@ module.exports = {
           }
         },
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: {
+          loader: "ts-loader",
+          options: {
+            // presets: [ "env", "react" ],
+            // plugins: ['transform-runtime']
+          }
+        },
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -104,9 +99,11 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".js", ".jsx", ".css", ".json"],
+    extensions: [".js", ".jsx", "ts", "tsx", ".css", "less", ".json"],
     alias: {
-      "@": "src"
-    }
+      "@": resolve("src"),
+      utils: resolve("src/utils")
+    },
+    modules: ['node_modules']
   }
 }

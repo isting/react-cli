@@ -19,7 +19,6 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
 
 
   <!-- babel7 -->
-  <!-- 目录 demo 整理 -->
   <!-- 整理常用插件 loader plugin-->
   <!-- 优化 -->
   <!-- ts loader -->
@@ -57,6 +56,7 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
 
   <!-- 发现问题 -->
   <!-- css不会热更新 -->
+  <!-- clean-webpack-plugin  有点问题-->
 
 <!-- 正妹推荐教程 v8 -->
   <!-- https://juejin.im/post/5beea5f5f265da61590b40cd -->

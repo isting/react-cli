@@ -4,17 +4,28 @@ const path = require('path')
 const merge = require('webpack-merge');
 const common = require('./webpack.base.js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-// const glob = require('glob')
-// const PurifyCss = require('purifycss-webpack')
 
 module.exports = merge(common, {
   mode: "production",
   devtool: 'source-map',
+  optimization: { // 提取公共代码
+    splitChunks: {
+        cacheGroups: {
+            commons: {
+              chunks: "initial",
+              minChunks: 2,//最小重复的次数
+              minSize: 0//最小提取字节数
+            },
+            vendor: {
+              test: /node_modules/,
+              chunks: "initial",
+              name: "vendor",
+            }
+        }
+    }
+  },
   plugins: [
-    // new PurifyCss({ // 那所有css都清空了
-    //   paths: glob.sync(path.join(__dirname, '../src/*.html'))
-    // }),
-    new CleanWebpackPlugin('dist', { // {文件名即可 root路径}
+    new CleanWebpackPlugin('dist', { // {文件名即可 root 路径}
       root: path.join(__dirname, "../"),
       verbose: true,
       dry: false
