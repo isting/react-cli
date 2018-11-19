@@ -1,7 +1,3 @@
-div {
-  background: red;
-}
-#root {
-  color: olivedrab;
-  transform: rotate(1deg);
+.title {
+  background: olive;
 }

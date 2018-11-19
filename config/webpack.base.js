@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -12,7 +14,7 @@ module.exports = {
   output: {
     publicPath: '',
     filename: '[hash:8].main.js',
-    path: resolve('../build')
+    path: resolve('../dist')
   },
   module: {
     rules: [
@@ -52,7 +54,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve("../index.html"),
-      filename: 'index.html'
+      filename: 'index.html',
+      title: '这是动态的标题'
     }),
     new webpack.BannerPlugin('版权所有，翻版必究'),
     new ExtractTextPlugin('css/css.css')
