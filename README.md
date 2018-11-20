@@ -28,7 +28,7 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
   <!-- ssr -->
   <!-- eslint -->
 <!-- 跨域反向代理 -->
-<!-- ico -->
+<!-- ico  /favicon.ico -->
 <!-- node启动；了解下 -->
   <hr />
 
@@ -49,6 +49,10 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
 <!-- 珠峰 -->
 <!-- http://mobilesite.github.io/2017/02/18/all-the-errors-encountered-in-webpack/ --> 
 
+
+<!-- 看看这个会不会热更新 -->
+<!-- https://github.com/BruceCham/react-cli/blob/release/webpack4/build/webpack.config.prod.js -->
+
   <!-- react@16.7.0-alpha.2 -->
   <!-- react-dom@16.7.0-alpha.2 -->
 
@@ -59,4 +63,4 @@ Generator 、 Set 、 Maps 、 Proxy 、 Reflect 、 Symbol 、 Promise 等全�
   <!-- clean-webpack-plugin  有点问题-->
 
 <!-- 正妹推荐教程 v8 -->
-  <!-- https://juejin.im/post/5beea5f5f265da61590b40cd -->
+<!-- https://juejin.im/post/5beea5f5f265da61590b40cd -->

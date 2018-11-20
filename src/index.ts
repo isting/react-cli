@@ -12,9 +12,13 @@ class Shape {
 }
 
 var square = new Shape("square", 30, 30);
-console.log( square.shoutout() );
-console.log( 'Area of Shape: ' + square.area );
-console.log( 'Color of Shape: ' + square.color );
+// console.log( square.shoutout() );
+// console.log( 'Area of Shape: ' + square.area );
+// console.log( 'Color of Shape: ' + square.color );
+
+// console.log('====================================');
+// console.log(console.log(process.env.NODE_ENV));
+// console.log('====================================');
 
 export default {
   a: square.area,

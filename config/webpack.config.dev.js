@@ -2,7 +2,7 @@
 
 const path = require('path')
 const merge = require('webpack-merge')
-const common = require("./webpack.base.js");
+const common = require("./webpack.config.base.js");
 const webpack = require("webpack");
 
 module.exports = merge(common, {
@@ -18,7 +18,7 @@ module.exports = merge(common, {
     compress: true,
     proxy: {
       // 'https://sixting.com/login'
-      '/': 'https://sixting.com/'  //  请求/login即可
+      // '/': 'https://sixting.com/'  //  请求/login即可
     }
   },
   plugins: [
