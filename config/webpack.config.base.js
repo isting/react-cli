@@ -4,9 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // 图形显示打包体积大小
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const devMode = process.env.NODE_ENV !== 'production' // false
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 function resolve(strPath) {
   return path.join(__dirname, strPath)
@@ -63,29 +61,6 @@ module.exports = {
         },
     */
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: "css/"
-            }
-          },
-          "css-loader",
-          "postcss-loader"
-        ],
-        // publicPath: '' // img public path  解决背景图片问题
-      },
-      {
-        test: /\.less$/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader, // js : css
-          'css-loader',
-          'postcss-loader',
-          'less-loader',
-        ],
-      },
-      {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'url-loader',
           options: {
@@ -116,17 +91,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve("../index.html"),
       filename: 'index.html',
-      title: 'title webpack'
+      title: 'title webpack',
+      // favicon: resolve("../dist/assets/favicon.ico")
     }),
     new webpack.BannerPlugin('版权所有，翻版必究'),
     // new ExtractTextPlugin('css/css.css'),
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: "server"
-    // }),
-    new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-    })
+    new CopyWebpackPlugin([{
+      from: resolve('../src/assets'),
+      to: resolve('../dist/assets'),
+    }])
   ],
   resolve: {
     extensions: [".js", ".jsx", "ts", "tsx", ".css", "less", ".json"],

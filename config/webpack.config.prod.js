@@ -7,6 +7,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const glob = require('glob')
 const PurifyCss = require('purifycss-webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // 图形显示打包体积大小
+
 
 module.exports = merge(common, {
   mode: "production",
@@ -33,6 +36,30 @@ module.exports = merge(common, {
         }
     }
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          // MiniCssExtractPlugin.loader,
+          "style-loader",
+          "css-loader",
+          "postcss-loader"
+        ],
+        // publicPath: '' // img public path  解决背景图片问题
+      },
+      {
+        test: /\.less$/,
+        use: [
+           MiniCssExtractPlugin.loader, // js : css
+          //  "style-loader",
+          'css-loader',
+          'postcss-loader',
+          'less-loader',
+        ],
+      }
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin('dist', { // {文件名即可 root 路径}
       root: path.join(__dirname, "../"),
@@ -44,7 +71,14 @@ module.exports = merge(common, {
     }),
     new UglifyJsPlugin({ // 摇树优化
       test: /.(js|ts)&/
-    })
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css'
+    }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: "server"
+    // })
   ]
 })
 

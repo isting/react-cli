@@ -8,6 +8,18 @@ const webpack = require("webpack");
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]
+      }
+    ]
+  },
   devServer: {
     contentBase: path.join(__dirname, '../dist'),
     port: '8082',
