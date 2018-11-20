@@ -10,13 +10,52 @@ module.exports = merge(common, {
   devtool: 'cheap-module-source-map',
   module: {
     rules: [
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   exclude: /node_modules/,
+      //   options: {
+      //       formatter: require('eslint-friendly-formatter')
+      //   }
+      // },
+      // {
+      //   test: /\.(ts|tsx)?$/,
+      //   enforce: 'pre',
+      //   loader: 'tslint-loader',
+      //   include: path.join(__dirname, '../', 'src'),
+      //   exclude: /node_modules/,
+      // },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: false,
+              localIdentName: '[path][hash:base64:5]',
+              module: true
+            }
+          }
+        ]
       },
       {
-        test: /\.less$/,
-        use: ["style-loader", "css-loader", "postcss-loader", "less-loader"]
+        test: /\.less/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: false,
+              importLoaders: 1,
+              localIdentName: '[path][hash:base64:5]',
+              module: true
+            }
+          },
+          {
+            loader: 'less-loader',
+          }]
       }
     ]
   },
@@ -34,6 +73,10 @@ module.exports = merge(common, {
     }
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.NoEmitOnErrorsPlugin(), // cli 遇到错误代码将不会退出 不输出错误日志 
+    // new FriendlyErrorsPlugin(),
   ]
 })
+
+// optimize-css-assets-webpack-plugin

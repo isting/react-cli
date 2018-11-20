@@ -70,15 +70,15 @@ module.exports = merge(common, {
       paths: glob.sync(path.join(__dirname, '../*.html')) // 对应模板html
     }),
     new UglifyJsPlugin({ // 摇树优化
-      test: /.(js|ts)&/
+      test: /.(js|ts)$/
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css'
     }),
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: "server"
-    // })
+    new BundleAnalyzerPlugin({
+      analyzerMode: "server"
+    })
   ]
 })
 
