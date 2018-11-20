@@ -2,3 +2,9 @@
   // background: blue;
   // color: red !important;
 }
+div {
+  text-align: center;
+}
+div.haha {
+  font-size: 50px;
+}

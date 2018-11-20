@@ -4,6 +4,7 @@ const path = require('path')
 const merge = require('webpack-merge')
 const common = require("./webpack.config.base.js");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'development',
@@ -76,6 +77,11 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(),
     // new webpack.NoEmitOnErrorsPlugin(), // cli 遇到错误代码将不会退出 不输出错误日志 
     // new FriendlyErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join("index.html"),
+      filename: 'index.html',
+      title: 'title webpack',
+    })
   ]
 })
 

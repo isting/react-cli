@@ -13,6 +13,7 @@ import A from './index.ts'
         <div className="title">
           hello world!
         </div>
+        O(∩_∩)O哈哈~
       </div>
     )
   }
