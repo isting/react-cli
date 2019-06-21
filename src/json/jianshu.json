@@ -1,0 +1,53 @@
+{
+  "link": "https://www.jianshu.com/p/cb888d69ca34",
+  "times": {
+    "alltime": 1080,
+    "details": {
+      "redirect": 0,
+      "dns": 0,
+      "ttfb": 205,
+      "static": 179,
+      "render": 873,
+      "onload": 1561009429017
+    },
+    "lifecycle": {
+      "_1": {
+        "key": "redirect",
+        "desc": "网页重定向的耗时",
+        "value": 0
+      },
+      "_2": {
+        "key": "cache",
+        "desc": "检查本地缓存的耗时",
+        "value": 12
+      },
+      "_3": {
+        "key": "dns",
+        "desc": "DNS查询的耗时",
+        "value": 0
+      },
+      "_4": {
+        "key": "tcp",
+        "desc": "TCP连接的耗时",
+        "value": 14
+      },
+      "_5": {
+        "key": "request",
+        "desc": "客户端发起请求的耗时",
+        "value": 177
+      },
+      "_6": {
+        "key": "response",
+        "desc": "服务端响应的耗时",
+        "value": 2
+      },
+      "_7": {
+        "key": "render",
+        "desc": "渲染页面的耗时",
+        "value": 873
+      },
+      "__": 1078
+    }
+  },
+  "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
+}

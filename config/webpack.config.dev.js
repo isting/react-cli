@@ -11,22 +11,6 @@ module.exports = merge(common, {
   devtool: 'cheap-module-source-map',
   module: {
     rules: [
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   loader: 'eslint-loader',
-      //   enforce: 'pre',
-      //   exclude: /node_modules/,
-      //   options: {
-      //       formatter: require('eslint-friendly-formatter')
-      //   }
-      // },
-      // {
-      //   test: /\.(ts|tsx)?$/,
-      //   enforce: 'pre',
-      //   loader: 'tslint-loader',
-      //   include: path.join(__dirname, '../', 'src'),
-      //   exclude: /node_modules/,
-      // },
       {
         test: /\.css$/,
         use: [
@@ -39,10 +23,11 @@ module.exports = merge(common, {
               module: true
             }
           }
-        ]
+        ],
+        exclude: /node_modules/,
       },
       {
-        test: /\.less/,
+        test: /\.less$/,
         use: [
           'style-loader',
           {
@@ -56,7 +41,8 @@ module.exports = merge(common, {
           },
           {
             loader: 'less-loader',
-          }]
+          }],
+          exclude: /node_modules/,
       }
     ]
   },
@@ -80,9 +66,9 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: path.join("index.html"),
       filename: 'index.html',
-      title: 'title webpack',
+      title: 'webpack',
     })
-  ]
+  ],
 })
 
 // optimize-css-assets-webpack-plugin

@@ -81,8 +81,5 @@ module.exports = merge(common, {
     })
   ]
 })
-
-
-
 // webpack-parallel-uglify-plugin 优化项目  多线程压缩
 // 'circular-dependency-plugin  查找循环依赖

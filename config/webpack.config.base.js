@@ -3,8 +3,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const DiyPlugin = require('./plugins')
 
 function resolve(strPath) {
   return path.join(__dirname, strPath)
@@ -21,13 +21,19 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: {
+        use: [{
           loader: 'babel-loader',
           options: {
             presets: [ "env", "react" ],
             plugins: ['transform-runtime']
           }
         },
+        { 
+          loader: path.resolve('./config/loaders/index.js'),
+          options: {
+            params: '我是一个参数',
+          }
+        }],
         exclude: /node_modules/,
       },
       {
@@ -37,29 +43,6 @@ module.exports = {
         },
         exclude: /node_modules/
       },
-      /* 
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ["css-loader", "postcss-loader"],
-            // use: ["css-loader", {
-            //   loader: 'postcss-loader',
-            //   options: {
-            //     pligins: [require('autoprefixer')]
-            //   }
-            // }]
-            publicPath: '' // img public path  解决背景图片问题
-          })
-        },
-        {
-          test: /\.less$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ["css-loader", "postcss-loader", "less-loader"]
-          })
-        },
-    */
       {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'url-loader',
@@ -92,14 +75,14 @@ module.exports = {
       template: resolve("../index.html"),
       filename: 'index.html',
       title: 'title webpack',
-      // favicon: resolve("../dist/assets/favicon.ico")
+      favicon: resolve("../src/assets/favicon.ico")
     }),
     new webpack.BannerPlugin('版权所有，翻版必究'),
-    // new ExtractTextPlugin('css/css.css'),
     new CopyWebpackPlugin([{
       from: resolve('../src/assets'),
       to: resolve('../dist/assets'),
-    }])
+    }]),
+    new DiyPlugin({params: '我是参数'})
   ],
   resolve: {
     extensions: [".js", ".jsx", "ts", "tsx", ".css", "less", ".json"],
